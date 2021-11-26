@@ -1,0 +1,13 @@
+scalar DateTime
+
+type Query {
+  chapter: Chapter
+}
+
+type Chapter {
+  no: Int
+  name: String
+  version: String
+  original: Boolean
+  postDate: DateTime
+}
