@@ -15,3 +15,14 @@ type Chapter {
 input ChapterParam {
   no: Int!
 }
+
+# リクエスト方法
+# query {
+#   chapter(param:{no:2}) {
+#     no
+#     name
+#     version
+#     original
+#     postDate
+#   }
+# }

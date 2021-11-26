@@ -1,7 +1,8 @@
 scalar DateTime
 
 type Query {
-  chapter: Chapter
+  chapters: [Chapter]
+  length: Int!
 }
 
 type Chapter {
@@ -15,11 +16,12 @@ type Chapter {
 
 # リクエスト方法
 # query {
-#   chapter() {
+#   chapters {
 #     no
 #     name
 #     version
 #     original
 #     postDate
 #   }
+#   length
 # }
