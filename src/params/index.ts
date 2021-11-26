@@ -13,10 +13,10 @@ const resolvers = {
       };
       const paramNo: number = args?.param?.no;
 
-      if(paramNo === 2) {
+      if(paramNo) {
         mockData = {
-          no: 2,
-          name: "no2 rutern data",
+          no: paramNo,
+          name: `no ${paramNo} rutern data`,
           version: "1.0.0",
           original: true,
           postDate: '2021-11-26T12:00:00Z'
