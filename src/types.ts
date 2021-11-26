@@ -5,3 +5,7 @@ export type Chapter = {
   original: boolean;
   postDate: string;
 }
+
+export type ChapterParam = {
+  no: number;
+}
