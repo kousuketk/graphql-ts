@@ -1,0 +1,57 @@
+scalar DateTime
+
+type Query {
+  chapter: Chapter
+}
+
+type Mutation {
+  create(param: CreateParam!): Chapter!
+  update(param: UpdateParam!): Chapter!
+}
+
+type Chapter {
+  no: Int
+  name: String
+  version: String
+  original: Boolean
+  postDate: DateTime
+}
+
+input CreateParam {
+  no: Int
+  name: String
+  version: String
+  original: Boolean
+  postDate: DateTime
+}
+
+input UpdateParam {
+  no: Int
+  name: String
+  version: String
+  original: Boolean
+  postDate: DateTime
+}
+
+
+# リクエスト方法
+# mutation update($param: UpdateParam!) {
+#   update(param: $param) {
+#     no
+#     name
+#     version
+#     original
+#     postDate
+#   }
+# }
+
+# 変数
+# {
+#     "param": {
+#       "no": 4,
+#       "name": "Mutationを使って追加・更新を行う",
+#       "version": "1.0.0",
+#       "original": true,
+#       "postDate": "2020-10-29T:12:00:00Z"
+#     }
+# }
