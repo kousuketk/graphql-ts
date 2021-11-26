@@ -25,3 +25,14 @@ export type UpdateParam = {
   original: boolean;
   postDate: string;
 }
+
+export type Result = {
+  data: Chapter;
+  statusCode: number;
+  error: Error[];
+}
+
+export type Error = {
+  code: number;
+  value: string;
+}

@@ -1,0 +1,74 @@
+scalar DateTime
+
+type Query {
+  chapter: Chapter
+}
+
+type Mutation {
+  create(param: CreateParam!): Result!
+  update(param: UpdateParam!): Result!
+}
+
+type Chapter {
+  no: Int
+  name: String
+  version: String
+  original: Boolean
+  postDate: DateTime
+}
+
+type Result {
+  data: Chapter
+  statusCode: Int!
+  error: [Error]
+}
+
+type Error {
+  code: Int!
+  value: String!
+}
+
+input CreateParam {
+  no: Int
+  name: String
+  version: String
+  original: Boolean
+  postDate: DateTime
+}
+
+input UpdateParam {
+  no: Int
+  name: String
+  version: String
+  original: Boolean
+  postDate: DateTime
+}
+
+# リクエスト方法
+# mutation($param: CreateParam!) {
+#   create(param: $param) {
+#     data {
+#       no
+#       name
+#       version
+#       original
+#       postDate
+#     }
+#     statusCode
+#     error {
+#       code
+#       value
+#     }
+#   }
+# }
+
+# 変数
+# {
+#     "param": {
+#         "no": 4,
+#         "name": "Validationを追加する",
+#         "version": "1.0.0",
+#         "original": true,
+#         "postDate": "2020-10-29T:12:00:00Z"
+#     }
+# }
